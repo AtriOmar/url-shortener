@@ -3,24 +3,28 @@ import { Link } from "react-router-dom";
 
 export default function NotFound() {
   return (
-    <div className="min-h-[calc(100vh-55px)] flex items-center justify-center">
-      <div className="flex gap-6 items-center">
+    <div className="flex justify-center items-center min-h-[calc(100vh-55px)]">
+      <div className="flex items-center gap-6">
         <div className="text-center">
-          <h3 className="text-purple text-6xl font-bold">Ooops!</h3>
-          <p className="mt-5 text-slate-700 text-xl font-medium">The link that you have accessed is not valid!</p>
-          <p className="mt-3 text-slate-950 text-xl font-semibold">Wanna create a short link with that alias ?</p>
+          <h3 className="font-bold text-purple text-6xl">Ooops!</h3>
+          <p className="mt-5 font-medium text-slate-700 text-xl">
+            The link that you have accessed is not valid!
+          </p>
+          <p className="mt-3 font-semibold text-slate-950 text-xl">
+            Wanna create a short link with that alias ?
+          </p>
           <Link
             to="/"
-            className="flex items-center justify-center w-fit h-[40px] mt-8 mx-auto px-4 py-2 text-white rounded-lg shadow bg-purple hover:bg-purple-dark focus:ring-1 ring-offset-1 focus:ring-purple-700 focus:outline-none duration-200"
+            className="flex justify-center items-center w-fit h-[40px] mx-auto mt-8 px-4 py-2 rounded-lg focus:outline-none focus:ring-1 focus:ring-purple-700 ring-offset-1 bg-purple hover:bg-purple-dark shadow text-white duration-200"
           >
-            <div className="flex gap-3 items-center">
+            <div className="flex items-center gap-3">
               <span>Start shortening URLs</span>
               <ScissorsIcon className="size-5" />
             </div>
           </Link>
         </div>
         <div>
-          <img src="/logo.png" alt="" className="size-48" />
+          <img src="/app/logo.png" alt="" className="size-48" />
         </div>
       </div>
     </div>

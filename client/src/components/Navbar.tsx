@@ -44,7 +44,7 @@ function Navbar() {
       <div className="flex justify-between items-center w-full max-w-7xl mx-auto">
         <div className="flex items-center gap-2">
           <Link className="flex items-center gap-2" to="/">
-            <img src="/logo.png" alt="" width={32} height={32} />
+            <img src="/app/logo.png" alt="" width={32} height={32} />
             <span className={`text-lg font-semibold mt-1`}>URLShortener</span>
           </Link>
         </div>

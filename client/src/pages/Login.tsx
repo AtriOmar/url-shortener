@@ -8,7 +8,7 @@ export default function Login() {
         <div className="px-4 py-10 bg-purple text-center">
           <div className="w-fit mx-auto rounded-lg bg-slate-100">
             <img
-              src="/logo.png"
+              src="/app/logo.png"
               width={60}
               height={60}
               alt=""
