@@ -13,6 +13,10 @@ router.use("/users", usersRoute);
 
 router.use("/", urlsRoute);
 
+router.get("/", (req: any, res: Response) => {
+  return res.redirect(`${process.env.APP_URL}`);
+});
+
 // =========== SEND REACT PRODUCTION BUILD ====================
 router.get("*", (req: any, res: Response) => {
   return res.redirect(`${process.env.APP_URL}/not-found`);
