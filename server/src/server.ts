@@ -25,6 +25,8 @@ var corsOptions = {
 
 const mongoose = require("mongoose");
 
+app.set("trust proxy", "127.0.0.1");
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(fileUpload());
@@ -48,4 +50,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(routes);
 
-app.listen(PORT, () => console.log(`React API server listening on http://localhost:${PORT}`));
+app.listen(PORT, () =>
+  console.log(`React API server listening on http://localhost:${PORT}`)
+);
