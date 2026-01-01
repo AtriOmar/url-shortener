@@ -15,7 +15,7 @@ router.use("/", urlsRoute);
 
 // =========== SEND REACT PRODUCTION BUILD ====================
 router.get("*", (req: any, res: Response) => {
-  res.status(404).send("Route not found");
+  return res.redirect(`${process.env.APP_URL}/not-found`);
 });
 
 module.exports = router;
