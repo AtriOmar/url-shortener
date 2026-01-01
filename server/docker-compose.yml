@@ -1,0 +1,37 @@
+services:
+  express-app:
+    container_name: url-shortener-app
+    image: url-shortener-app
+    build: .
+    env_file:
+      - .env
+
+    restart: always
+
+    ports:
+      - "50004:5000"
+    
+    environment:
+      - NODE_ENV=production
+
+    volumes:
+      - url_shortener_uploads:/app/public/uploads:rw,noexec,nosuid,nodev
+
+    # Read-only root filesystem
+    read_only: true
+
+    # Writable temp locations
+    tmpfs:
+      - /tmp:uid=1001,gid=1001,mode=1777
+
+    # Drop all Linux capabilities
+    cap_drop:
+      - ALL
+
+    # Extra security
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  url_shortener_uploads:
+    name: url_shortener_uploads
