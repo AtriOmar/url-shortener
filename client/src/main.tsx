@@ -14,36 +14,41 @@ import NotFound from "@/pages/NotFound";
 axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 axios.defaults.withCredentials = true;
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        {
+          index: true,
+          element: <Home />,
+        },
+        {
+          path: "auth",
+          element: <AuthLayout />,
+          children: [
+            {
+              path: "login",
+              element: <Login />,
+            },
+            {
+              path: "register",
+              element: <Register />,
+            },
+          ],
+        },
+        {
+          path: "*",
+          element: <NotFound />,
+        },
+      ],
+    },
+  ],
   {
-    path: "/",
-    element: <Layout />,
-    children: [
-      {
-        index: true,
-        element: <Home />,
-      },
-      {
-        path: "auth",
-        element: <AuthLayout />,
-        children: [
-          {
-            path: "login",
-            element: <Login />,
-          },
-          {
-            path: "register",
-            element: <Register />,
-          },
-        ],
-      },
-      {
-        path: "*",
-        element: <NotFound />,
-      },
-    ],
-  },
-]);
+    basename: "/app",
+  }
+);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <AuthProvider>
