@@ -28,7 +28,7 @@ export default function Login() {
           <p className="mt-4 font-medium text-[13px] text-center">
             Don't have an account ?{" "}
             <Link
-              to="/app/auth/register"
+              to="/auth/register"
               className="text-purple hover:text-purple-dark duration-200"
             >
               Register

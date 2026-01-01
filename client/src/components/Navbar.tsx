@@ -85,7 +85,7 @@ function Navbar() {
           ) : (
             <Link
               className={`flex items-center gap-1 py-1 px-4 rounded-xl bg-[#8a21ed] hover:bg-[#690fbd] text-white text-[15px] duration-200 shadow-md`}
-              to="/app/auth/login"
+              to="/auth/login"
             >
               <LockClosedIcon className="w-4 h-4" />
               <span>Login</span>
